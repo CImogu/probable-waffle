@@ -1,0 +1,14 @@
+/Users/christineimogu/Downloads/111-testing/Joycon/bin/Debug/net7.0/Joycon
+/Users/christineimogu/Downloads/111-testing/Joycon/bin/Debug/net7.0/Joycon.deps.json
+/Users/christineimogu/Downloads/111-testing/Joycon/bin/Debug/net7.0/Joycon.runtimeconfig.json
+/Users/christineimogu/Downloads/111-testing/Joycon/bin/Debug/net7.0/Joycon.dll
+/Users/christineimogu/Downloads/111-testing/Joycon/bin/Debug/net7.0/Joycon.pdb
+/Users/christineimogu/Downloads/111-testing/Joycon/obj/Debug/net7.0/Joycon.GeneratedMSBuildEditorConfig.editorconfig
+/Users/christineimogu/Downloads/111-testing/Joycon/obj/Debug/net7.0/Joycon.AssemblyInfoInputs.cache
+/Users/christineimogu/Downloads/111-testing/Joycon/obj/Debug/net7.0/Joycon.AssemblyInfo.cs
+/Users/christineimogu/Downloads/111-testing/Joycon/obj/Debug/net7.0/Joycon.csproj.CoreCompileInputs.cache
+/Users/christineimogu/Downloads/111-testing/Joycon/obj/Debug/net7.0/Joycon.dll
+/Users/christineimogu/Downloads/111-testing/Joycon/obj/Debug/net7.0/refint/Joycon.dll
+/Users/christineimogu/Downloads/111-testing/Joycon/obj/Debug/net7.0/Joycon.pdb
+/Users/christineimogu/Downloads/111-testing/Joycon/obj/Debug/net7.0/Joycon.genruntimeconfig.cache
+/Users/christineimogu/Downloads/111-testing/Joycon/obj/Debug/net7.0/ref/Joycon.dll
