@@ -74,7 +74,7 @@ namespace UDP
 
             UDPSocket c = new UDPSocket();
             c.Client("127.0.0.1", 27000);
-            c.Send("TEST!");
+            // c.Send((char));
 
             Console.ReadKey();
             s._socket.Close(); //Fixed closing bug (System.ObjectDisposedException)

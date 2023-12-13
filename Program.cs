@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Net.Sockets;
+
+using UDP;
 
 using System;
 public class JoyconManger {
@@ -16,9 +19,99 @@ public class JoyconManger {
 
     static void Main() {
         JoyconManger manager = new JoyconManger();
-		manager.Awake();
+		bool [,] move_prev_state = new bool[4, manager.j.Count];
+		bool [,] shoot_prev_state = new bool[4, manager.j.Count];
+		// up, down, left, right
 
+		manager.Awake();
         manager.Start();
+
+		UDPSocket c = new UDPSocket();
+        c.Client("127.0.0.1", 27000);
+
+		while(true) {
+			manager.Update();
+            string sendchar = string.Empty;
+            for (int i = 0; i < manager.j.Count; i++) {
+				//Check if a button has been pressed (not held)
+				Joycon jc = manager.j[i];
+				sendchar += '1';
+
+				// check if any button is pressed
+				if (jc.GetButton(Joycon.Button.DPAD_UP)) {
+					move_prev_state[0, i] = true;
+				} else if (jc.GetButton(Joycon.Button.DPAD_DOWN)) {
+					move_prev_state[1, i] = true;
+				} else if (jc.GetButton(Joycon.Button.DPAD_LEFT)) {
+					move_prev_state[2, i] = true;
+				} else if (jc.GetButton(Joycon.Button.DPAD_RIGHT)) {
+					move_prev_state[3, i] = true;
+				}
+
+				if (jc.GetButton(Joycon.Button.SL)) {
+					shoot_prev_state[0, i] = true;
+				} else if (jc.GetButton(Joycon.Button.SR)) {
+					shoot_prev_state[1, i] = true;
+				} else if (jc.GetButton(Joycon.Button.SHOULDER_1)) {
+					shoot_prev_state[2, i] = true;
+				} else if (jc.GetButton(Joycon.Button.SHOULDER_2)) {
+					shoot_prev_state[3, i] = true;
+				}
+
+				// jc.GetButtonUp(Joycon.Button.SHOULDER_2) released
+
+				// send state if button released
+				if (jc.GetButtonUp(Joycon.Button.DPAD_UP)){
+					if (move_prev_state[0, i]) {
+						sendchar += '0';
+					}
+					move_prev_state[0, i] = false;
+				} else if (jc.GetButtonUp(Joycon.Button.DPAD_DOWN)) {
+					if (move_prev_state[1, i]) {
+						sendchar += '1';
+					}
+					move_prev_state[1, i] = false;
+				} else if (jc.GetButtonUp(Joycon.Button.DPAD_LEFT)) {
+					if (move_prev_state[2, i]) {
+						sendchar += '2';
+					}
+					move_prev_state[2, i] = false;
+				} else if (jc.GetButtonUp(Joycon.Button.DPAD_RIGHT)) {
+					if (move_prev_state[3, i]) {
+						sendchar += '3';
+					}
+					move_prev_state[3, i] = false;
+				} else {
+					sendchar += '4';
+				}
+
+				if (jc.GetButtonUp(Joycon.Button.SL)){
+					if (shoot_prev_state[0, i]) {
+						sendchar += '0';
+					}
+					shoot_prev_state[0, i] = false;
+				} else if (jc.GetButtonUp(Joycon.Button.DPAD_DOWN)) {
+					if (shoot_prev_state[1, i]) {
+						sendchar += '1';
+					}
+					shoot_prev_state[1, i] = false;
+				} else if (jc.GetButtonUp(Joycon.Button.DPAD_LEFT)) {
+					if (shoot_prev_state[2, i]) {
+						sendchar += '2';
+					}
+					shoot_prev_state[2, i] = false;
+				} else if (jc.GetButtonUp(Joycon.Button.DPAD_RIGHT)) {
+					if (shoot_prev_state[3, i]) {
+						sendchar += '3';
+					}
+					shoot_prev_state[3, i] = false;
+				} else {
+					sendchar += '4';
+				}
+			}
+			c.Send(sendchar);
+			//sendchar: [player1_valid(1)][move_dir(3)][shooting_dir(3)]
+		}
 	}
 
     public static JoyconManger Instance { get; private set; }
