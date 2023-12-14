@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../ip/adder_many/ip/adder_many/sim/adder_many.v" \
+"../../../../../ip/fixed2float/ip/fixed2float/sim/fixed2float.v" \
+"../../../../../hdl/xilinx_single_port_ram_read_first.v" \
+
+sv xil_defaultlib  \
+"../../../../../hdl/threegen.sv" \
+"../../../../../sim/threegen_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

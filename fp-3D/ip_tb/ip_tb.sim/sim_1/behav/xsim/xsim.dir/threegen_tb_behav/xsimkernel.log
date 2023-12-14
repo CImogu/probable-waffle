@@ -1,0 +1,7 @@
+Running: xsim.dir/threegen_tb_behav/xsimk -simmode gui -wdb threegen_tb_behav.wdb -simrunnum 0 -socket 39603
+Design successfully loaded
+Design Loading Memory Usage: 33804 KB (Peak: 33804 KB)
+Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 109232 KB (Peak: 173072 KB)
+Simulation CPU Usage: 70 ms

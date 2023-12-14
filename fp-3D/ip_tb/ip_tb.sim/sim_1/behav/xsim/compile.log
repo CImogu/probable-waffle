@@ -1,0 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ccimogu/Downloads/fp/ip/adder_many/ip/adder_many/sim/adder_many.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_many
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ccimogu/Downloads/fp/ip/fixed2float/ip/fixed2float/sim/fixed2float.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fixed2float
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ccimogu/Downloads/fp/hdl/xilinx_single_port_ram_read_first.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xilinx_single_port_ram_read_first
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ccimogu/Downloads/fp/hdl/threegen.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module convert_player
+INFO: [VRFC 10-311] analyzing module threegen
+INFO: [VRFC 10-311] analyzing module threegen_wrap2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ccimogu/Downloads/fp/sim/threegen_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module threegen_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ccimogu/Downloads/fp/ip_tb/ip_tb.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

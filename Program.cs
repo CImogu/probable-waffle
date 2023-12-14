@@ -35,7 +35,7 @@ public class JoyconManger {
             for (int i = 0; i < manager.j.Count; i++) {
 				//Check if a button has been pressed (not held)
 				Joycon jc = manager.j[i];
-				sendchar += '1';
+				// sendchar += '1';
 
 				// check if any button is pressed
 				if (jc.GetButton(Joycon.Button.DPAD_UP)) {
