@@ -240,10 +240,7 @@ so baycentric could be used to interpolate (P = uA + vB+ wC, u+v+w=1) ? ---> nee
 else have to perform find_t for each pixel given a triangle
 */
 
-module displaying #(
-    parameter WIDTH = 1024,
-    parameter HEIGHT = 720
-)(
+module displaying (
     input wire clk_in,
     input wire rst_in,
     input wire valid_in,
@@ -293,11 +290,11 @@ scale_vec get2d (
 localparam TRIANGLES = 72; // 6 objects * 12 triangles each
 logic [$clog2(TRIANGLES)-1:0] wt_addr;
 logic twrite;
-logic [59:0] tv_in;
-logic [59:0] prev_tv_out;
+logic [191:0] tv_in;
+logic [191:0] prev_tv_out;
 
 xilinx_true_dual_port_read_first_2_clock_ram #(
-    .RAM_WIDTH(60), // A{x, y}, B{x y}, C{x, y}
+    .RAM_WIDTH(192), // A{x, y}, B{x y}, C{x, y}
     .RAM_DEPTH(72))
     triangle_data (
     // writing output from scale_vec
@@ -321,127 +318,30 @@ xilinx_true_dual_port_read_first_2_clock_ram #(
   );
 
 
-always_comb begin
-    t_write = {10'(screen_px[0]), 10'(screen_py[0]), 10'(screen_px[1]), 10'b(screen_py[1]), 10'b(screen_px[2]), 10'b(screen_py[2])};
-    tv_in = stage_check == 1;
-end
-
-logic [19:0] screen_px [2:0];
-logic [19:0] screen_py [2:0];
+logic [31:0] screen_px [2:0];
+logic [31:0] screen_py [2:0];
 logic [2:0] stage_check;
-logic write_done;
 
-typedef enum {A=0; B=1; C=2; D=3 } read_fsm;
-read_fsm read_state;
-logic [$clog2(TRIANGLES)-1:0] rt_addr;
-logic [59:0] tv_out;
-logic read_done;
-
-always_ff @( posedge clk_in ) begin
+/* always_ff @( posedge clk_in ) begin
     if (rst_in) begin
         wt_addr <= 0;
-        rt_addr <= 0;
-        stage_check <= 'b100;
-        read_state <= A;
+        all_found <= 0;
     end else begin
 
         // Writing FSM
-        if (stage_check == 1) begin
-            stage_check <= 'b100;
-            if (wt_addr == (TRIANGLES - 1)) begin
-                write_done <= 1;
-            end else begin
-                wt_addr <= wt_addr + 1;
+        if (&(all_found)) begin
+            
+        end
+        if (pixel_valid) begin
+            for (integer i = 0; i < 3; i = i+1) begin
+                
             end
-
-        end else if (pixel_valid) begin
-            done <= 0;
-            screen_px[0] <= pixel_x;
-            screen_py[0] <= pixel_y;
-            for (integer i = 0; i < 2; i = i+1) begin
-                screen_px[i+1] <= screen_px[i];
-                screen_py[i+1] <= screen_py[i];
-            end
-            stage_check <= stage_check >> 1;
         end
         
-        // Reading FSM
-        case (read_state)
-            A: fsm_state <= B;
-            B: fsm_state <= C;
-            C: begin
-                cvertex_a <= screen_px[59:40];
-                cvertex_b <= screen_px[39:20];
-                cvertex_b <= screen_px[19:0];
-                cvalid_in <= 1;
-                fsm_state <= D;
-            end
-            D: begin
-                if (clast) begin
-                    fsm_state <= A;
-                    rt_addr <= rt_addr + 1;
-                end
-            end
-            default: 
-        endcase
     end
-end 
+end */
 
-logic [19:0] cvertex_a;
-logic [19:0] cvertex_b;
-logic [19:0] cvertex_c;
-logic cvalid_in;
-logic clast;
-logic to_color;
-
-logic [19:0] pixel_to_color;
-
-triangle_color #(.WIDTH(WIDTH), .HEIGHT(HEIGHT)
-  ) color_screen(
-    .clk_in(clk_in),
-    .rst_in(rst_in),
-    .valid_in(cvalid_in),
-    .vertex_a(cvertex_a),
-    .vertex_b(cvertex_b),
-    .vertex_c(cvertex_c),
-    .valid_out(to_color), // Note: this is not single cycle !!
-    .pixel_to_color(pixel_to_color),
-    .last_out(clast)
-);
-logic [$clog2(SOURCE_SIZE)-1:0] sr_add;     
-logic [23:0] color_out = 23'h0000FF;
-logic to_color;
-
-localparam SOURCE_SIZE = WIDTH * HEIGHT;
-logic pixel_value;
-logic pixel_color;
-logic [23:0] previous;
-
-logic [$clog2(SOURCE_SIZE)-1:0] pixel_addr;
-assign pixel_addr = pixel_to_color[19:10] + (pixel_to_color[9:0] * WIDTH);
-
-xilinx_true_dual_port_read_first_2_clock_ram #(
-    .RAM_WIDTH(24), // A{x, y}, B{x y}, C{x, y}
-    .RAM_DEPTH(SOURCE_SIZE))
-    screen_data (
-    // writing pixel values
-    .addra(pixel_addr),
-    .clka(clk_in),
-    .wea(pixel_color),
-    .dina(pixel_value),
-    .ena(1'b1),
-    .regcea(1'b1),
-    .rsta(rst_in),
-    .douta(previous),
-    // reading pixels
-    .addrb(sr_add),
-    .dinb(1'b0),
-    .clkb(clk_in),
-    .web(1'b0),
-    .enb(1'b1),
-    .rstb(rst_in),
-    .regceb(1'b1),
-    .doutb(color_out)
-  );
-
+logic [$clog2(TRIANGLES)-1:0] rt_addr;
+logic [191:0] tv_out;
+    
 endmodule
