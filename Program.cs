@@ -90,17 +90,17 @@ public class JoyconManger {
 						sendchar += '0';
 					}
 					shoot_prev_state[0, i] = false;
-				} else if (jc.GetButtonUp(Joycon.Button.DPAD_DOWN)) {
+				} else if (jc.GetButtonUp(Joycon.Button.SR)) {
 					if (shoot_prev_state[1, i]) {
 						sendchar += '1';
 					}
 					shoot_prev_state[1, i] = false;
-				} else if (jc.GetButtonUp(Joycon.Button.DPAD_LEFT)) {
+				} else if (jc.GetButtonUp(Joycon.Button.SHOULDER_1)) {
 					if (shoot_prev_state[2, i]) {
 						sendchar += '2';
 					}
 					shoot_prev_state[2, i] = false;
-				} else if (jc.GetButtonUp(Joycon.Button.DPAD_RIGHT)) {
+				} else if (jc.GetButtonUp(Joycon.Button.SHOULDER_2)) {
 					if (shoot_prev_state[3, i]) {
 						sendchar += '3';
 					}
