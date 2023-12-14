@@ -1,0 +1,669 @@
+$date
+	Wed Dec 13 02:42:51 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module read_udp_tb $end
+$var wire 1 ! valid_out $end
+$var wire 3 " p4_shooting [2:0] $end
+$var wire 3 # p4_movement [2:0] $end
+$var wire 3 $ p3_shooting [2:0] $end
+$var wire 3 % p3_movement [2:0] $end
+$var wire 3 & p2_shooting [2:0] $end
+$var wire 3 ' p2_movement [2:0] $end
+$var wire 3 ( p1_shooting [2:0] $end
+$var wire 3 ) p1_movement [2:0] $end
+$var reg 1 * clk_in $end
+$var reg 8 + data_in [7:0] $end
+$var reg 1 , data_valid_in $end
+$var reg 1 - rst_in $end
+$scope module testing $end
+$var wire 1 * clk_in $end
+$var wire 8 . data_in [7:0] $end
+$var wire 1 , data_valid_in $end
+$var wire 1 - rst_in $end
+$var parameter 33 / FULL_HEADER_SIZE $end
+$var parameter 32 0 IPV4_HEADER_SIZE $end
+$var parameter 2 1 P1 $end
+$var parameter 2 2 P2 $end
+$var parameter 2 3 P3 $end
+$var parameter 2 4 P4 $end
+$var parameter 2 5 RECEIVE_IP_HEADER $end
+$var parameter 2 6 RECEIVE_PAYLOAD $end
+$var parameter 2 7 RECEIVE_UDP_HEADER $end
+$var parameter 32 8 UDP_HEADER_SIZE $end
+$var reg 16 9 bit_counter [15:0] $end
+$var reg 160 : ipv4_header [159:0] $end
+$var reg 3 ; p1_movement [2:0] $end
+$var reg 3 < p1_shooting [2:0] $end
+$var reg 3 = p2_movement [2:0] $end
+$var reg 3 > p2_shooting [2:0] $end
+$var reg 3 ? p3_movement [2:0] $end
+$var reg 3 @ p3_shooting [2:0] $end
+$var reg 3 A p4_movement [2:0] $end
+$var reg 3 B p4_shooting [2:0] $end
+$var reg 2 C player [1:0] $end
+$var reg 2 D state [1:0] $end
+$var reg 64 E udp_header [63:0] $end
+$var reg 1 ! valid_out $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 F i [31:0] $end
+$upscope $end
+$scope begin $ivl_for_loop1 $end
+$var integer 32 G i [31:0] $end
+$upscope $end
+$scope begin $ivl_for_loop2 $end
+$var integer 32 H i [31:0] $end
+$upscope $end
+$scope begin $ivl_for_loop3 $end
+$var integer 32 I i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000000 8
+b1 7
+b11 6
+b0 5
+b11 4
+b10 3
+b1 2
+b0 1
+b10100000 0
+b11100000 /
+$end
+#0
+$dumpvars
+b0 I
+b0 H
+b0 G
+b0 F
+bx E
+bx D
+bx C
+bx B
+bx A
+bx @
+bx ?
+bx >
+bx =
+bx <
+bx ;
+bx :
+bx 9
+b0 .
+0-
+0,
+b0 +
+0*
+bx )
+bx (
+bx '
+bx &
+bx %
+bx $
+bx #
+bx "
+x!
+$end
+#5000
+1*
+#10000
+0*
+1-
+#15000
+b0 "
+b0 B
+b0 #
+b0 A
+b0 $
+b0 @
+b0 %
+b0 ?
+b0 &
+b0 >
+b0 '
+b0 =
+b0 (
+b0 <
+b0 )
+b0 ;
+b0 9
+0!
+b0 D
+1*
+#20000
+0*
+0-
+#25000
+1*
+#30000
+0*
+b11111111 +
+b11111111 .
+1,
+#35000
+b11111111xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b1000 9
+1*
+#40000
+0*
+b0 +
+b0 .
+#45000
+b1111111100000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b10000 9
+1*
+#50000
+0*
+b1 F
+#55000
+b111111110000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b11000 9
+1*
+#60000
+0*
+b10 F
+#65000
+b11111111000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b100000 9
+1*
+#70000
+0*
+b11 F
+#75000
+b1111111100000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b101000 9
+1*
+#80000
+0*
+b100 F
+#85000
+b111111110000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b110000 9
+1*
+#90000
+0*
+b101 F
+#95000
+b11111111000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b111000 9
+1*
+#100000
+0*
+b110 F
+#105000
+b1111111100000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b1000000 9
+1*
+#110000
+0*
+b111 F
+#115000
+b111111110000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b1001000 9
+1*
+#120000
+0*
+b1000 F
+#125000
+b11111111000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b1010000 9
+1*
+#130000
+0*
+b1001 F
+#135000
+b1111111100000000000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b1011000 9
+1*
+#140000
+0*
+b1010 F
+#145000
+b111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b1100000 9
+1*
+#150000
+0*
+b1011 F
+#155000
+b11111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b1101000 9
+1*
+#160000
+0*
+b1100 F
+#165000
+b1111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b1110000 9
+1*
+#170000
+0*
+b1101 F
+#175000
+b111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b1111000 9
+1*
+#180000
+0*
+b1110 F
+#185000
+b11111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b10000000 9
+1*
+#190000
+0*
+b1111 F
+#195000
+b1111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxx :
+b10001000 9
+1*
+#200000
+0*
+b10000 F
+#205000
+b111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxxxxxxxxxx :
+b10010000 9
+1*
+#210000
+0*
+b10001 F
+#215000
+b11111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000xxxxxxxx :
+b10011000 9
+1*
+#220000
+0*
+b11111111 +
+b11111111 .
+b10010 F
+#225000
+b1111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111 :
+b1 D
+b0 9
+1*
+#230000
+0*
+0,
+#235000
+1*
+#240000
+0*
+b11111110 +
+b11111110 .
+1,
+#245000
+b11111110xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx E
+b1000 9
+1*
+#250000
+0*
+b0 +
+b0 .
+#255000
+b1111111000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx E
+b10000 9
+1*
+#260000
+0*
+b1 G
+#265000
+b111111100000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx E
+b11000 9
+1*
+#270000
+0*
+b10 G
+#275000
+b11111110000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx E
+b100000 9
+1*
+#280000
+0*
+b11 G
+#285000
+b1111111000000000000000000000000000000000xxxxxxxxxxxxxxxxxxxxxxxx E
+b101000 9
+1*
+#290000
+0*
+b100 G
+#295000
+b111111100000000000000000000000000000000000000000xxxxxxxxxxxxxxxx E
+b110000 9
+1*
+#300000
+0*
+b101 G
+#305000
+b11111110000000000000000000000000000000000000000000000000xxxxxxxx E
+b111000 9
+1*
+#310000
+0*
+b11111110 +
+b11111110 .
+b110 G
+#315000
+b1111111000000000000000000000000000000000000000000000000011111110 E
+b0 C
+b11 D
+b0 9
+1*
+#320000
+0*
+b11010101 +
+b11010101 .
+#325000
+b1 C
+b101 (
+b101 <
+b101 )
+b101 ;
+1*
+#330000
+0*
+b1110111 +
+b1110111 .
+#335000
+b10 C
+b111 &
+b111 >
+b111 '
+b111 =
+1*
+#340000
+0*
+b10101010 +
+b10101010 .
+#345000
+b11 C
+b10 $
+b10 @
+b10 %
+b10 ?
+1*
+#350000
+0*
+b1 +
+b1 .
+#355000
+1!
+b0 D
+b1 "
+b1 B
+1*
+#360000
+0*
+b11111111 +
+b11111111 .
+#365000
+0!
+b1000 9
+1*
+#370000
+0*
+b0 +
+b0 .
+#375000
+b10000 9
+1*
+#380000
+0*
+b1 H
+#385000
+b11000 9
+1*
+#390000
+0*
+b10 H
+#395000
+b100000 9
+1*
+#400000
+0*
+b11 H
+#405000
+b101000 9
+1*
+#410000
+0*
+b100 H
+#415000
+b110000 9
+1*
+#420000
+0*
+b101 H
+#425000
+b111000 9
+1*
+#430000
+0*
+b110 H
+#435000
+b1000000 9
+1*
+#440000
+0*
+b111 H
+#445000
+b1001000 9
+1*
+#450000
+0*
+b1000 H
+#455000
+b1010000 9
+1*
+#460000
+0*
+b1001 H
+#465000
+b1011000 9
+1*
+#470000
+0*
+b1010 H
+#475000
+b1100000 9
+1*
+#480000
+0*
+b1011 H
+#485000
+b1101000 9
+1*
+#490000
+0*
+b1100 H
+#495000
+b1110000 9
+1*
+#500000
+0*
+b1101 H
+#505000
+b1111000 9
+1*
+#510000
+0*
+b1110 H
+#515000
+b10000000 9
+1*
+#520000
+0*
+b1111 H
+#525000
+b10001000 9
+1*
+#530000
+0*
+b10000 H
+#535000
+b10010000 9
+1*
+#540000
+0*
+b10001 H
+#545000
+b10011000 9
+1*
+#550000
+0*
+b11111111 +
+b11111111 .
+b10010 H
+#555000
+b1 D
+b0 9
+1*
+#560000
+0*
+0,
+#565000
+1*
+#570000
+0*
+1,
+#575000
+b1111111100000000000000000000000000000000000000000000000011111110 E
+b1000 9
+1*
+#580000
+0*
+b0 +
+b0 .
+#585000
+b10000 9
+1*
+#590000
+0*
+b1 I
+#595000
+b11000 9
+1*
+#600000
+0*
+b10 I
+#605000
+b100000 9
+1*
+#610000
+0*
+b11 I
+#615000
+b101000 9
+1*
+#620000
+0*
+b100 I
+#625000
+b110000 9
+1*
+#630000
+0*
+b101 I
+#635000
+b111000 9
+1*
+#640000
+0*
+b10110011 +
+b10110011 .
+b110 I
+#645000
+b1111111100000000000000000000000000000000000000000000000010110011 E
+b0 C
+b11 D
+b0 9
+1*
+#650000
+0*
+b11010111 +
+b11010111 .
+#655000
+b1 C
+b111 (
+b111 <
+1*
+#660000
+0*
+b1110101 +
+b1110101 .
+#665000
+b10 C
+b101 &
+b101 >
+1*
+#670000
+0*
+b10101011 +
+b10101011 .
+#675000
+b11 C
+b11 $
+b11 @
+1*
+#680000
+0*
+b11 +
+b11 .
+#685000
+1!
+b0 D
+b11 "
+b11 B
+1*
+#690000
+0*
+0,
+#695000
+0!
+1*
+#700000
+0*
+#705000
+1*
+#710000
+0*
+#715000
+1*
+#720000
+0*
+#725000
+1*
+#730000
+0*
+#735000
+1*
+#740000
+0*
+#745000
+1*
+#750000
+0*
+#755000
+1*
+#760000
+0*
+#765000
+1*
+#770000
+0*
+#775000
+1*
+#780000
+0*
+#785000
+1*
+#790000
+0*
