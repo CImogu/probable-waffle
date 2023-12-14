@@ -1,0 +1,23 @@
+---
+cores:
+
+  fproj_io_core:
+    type: io
+
+    inputs:
+      val1_in: 32
+
+    outputs:
+      val2_out: 32
+      val3_out: 32
+      val4_out: 32
+      val5_out: 32
+      val6_out: 32
+      val7_out: 32
+      val8_out: 32
+      val9_out: 32
+
+uart:
+  port: "/dev/cu.usbserial-8874292302E61"
+  baudrate: 3000000
+  clock_freq: 100000000

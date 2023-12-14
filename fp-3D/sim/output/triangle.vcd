@@ -1,0 +1,745 @@
+$date
+	Wed Dec  6 16:37:27 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module triangle_tb $end
+$var wire 1 ! is_inside $end
+$var wire 1 " data_valid_out $end
+$var reg 1 # clk_in $end
+$var reg 1 $ data_valid_in $end
+$var reg 6 % point_x [5:0] $end
+$var reg 6 & point_y [5:0] $end
+$var reg 6 ' vertex_ax [5:0] $end
+$var reg 6 ( vertex_ay [5:0] $end
+$var reg 6 ) vertex_bx [5:0] $end
+$var reg 6 * vertex_by [5:0] $end
+$var reg 6 + vertex_cx [5:0] $end
+$var reg 6 , vertex_cy [5:0] $end
+$scope module uut $end
+$var wire 1 # clk_in $end
+$var wire 6 - point_x [5:0] $end
+$var wire 6 . point_y [5:0] $end
+$var wire 1 $ valid_in $end
+$var wire 6 / vertex_ax [5:0] $end
+$var wire 6 0 vertex_ay [5:0] $end
+$var wire 6 1 vertex_bx [5:0] $end
+$var wire 6 2 vertex_by [5:0] $end
+$var wire 6 3 vertex_cx [5:0] $end
+$var wire 6 4 vertex_cy [5:0] $end
+$var wire 1 " valid_out $end
+$var wire 1 ! is_inside $end
+$var parameter 32 5 SYS_BIT_WIDTH $end
+$scope module triangle $end
+$var wire 1 # clk_in $end
+$var wire 1 $ valid_in $end
+$var wire 1 6 kb_valid $end
+$var wire 13 7 kb_constant [12:0] $end
+$var wire 1 8 ka_valid $end
+$var wire 13 9 ka_constant [12:0] $end
+$var wire 1 : d_valid $end
+$var wire 13 ; d_constant [12:0] $end
+$var parameter 32 < SYS_BIT_WIDTH $end
+$var parameter 33 = sign_idx $end
+$var reg 15 > c_check [14:0] $end
+$var reg 1 ? c_check_valid $end
+$var reg 1 @ complete $end
+$var reg 13 A d_abs [12:0] $end
+$var reg 14 B f_abs [13:0] $end
+$var reg 14 C f_constant [13:0] $end
+$var reg 1 D f_valid $end
+$var reg 1 ! is_inside $end
+$var reg 1 E pos_a $end
+$var reg 1 F pos_b $end
+$var reg 1 " valid_out $end
+$scope module ab $end
+$var wire 6 G point_ax [5:0] $end
+$var wire 6 H point_ay [5:0] $end
+$var wire 6 I point_bx [5:0] $end
+$var wire 6 J point_by [5:0] $end
+$var parameter 32 K SYS_BIT_WIDTH $end
+$var reg 7 L vec_ab_out_x [6:0] $end
+$var reg 7 M vec_ab_out_y [6:0] $end
+$upscope $end
+$scope module ac $end
+$var wire 6 N point_ax [5:0] $end
+$var wire 6 O point_ay [5:0] $end
+$var wire 6 P point_bx [5:0] $end
+$var wire 6 Q point_by [5:0] $end
+$var parameter 32 R SYS_BIT_WIDTH $end
+$var reg 7 S vec_ab_out_x [6:0] $end
+$var reg 7 T vec_ab_out_y [6:0] $end
+$upscope $end
+$scope module d $end
+$var wire 1 # clk_in $end
+$var wire 1 $ valid_in $end
+$var wire 7 U vec_ax [6:0] $end
+$var wire 7 V vec_ay [6:0] $end
+$var wire 7 W vec_bx [6:0] $end
+$var wire 7 X vec_by [6:0] $end
+$var parameter 32 Y SYS_BIT_WIDTH $end
+$var reg 1 Z state $end
+$var reg 1 : valid_out $end
+$var reg 13 [ value_out [12:0] $end
+$upscope $end
+$scope module ka $end
+$var wire 1 # clk_in $end
+$var wire 1 $ valid_in $end
+$var wire 7 \ vec_by [6:0] $end
+$var wire 7 ] vec_bx [6:0] $end
+$var wire 7 ^ vec_ay [6:0] $end
+$var wire 7 _ vec_ax [6:0] $end
+$var parameter 32 ` SYS_BIT_WIDTH $end
+$var reg 1 a state $end
+$var reg 1 8 valid_out $end
+$var reg 13 b value_out [12:0] $end
+$upscope $end
+$scope module kb $end
+$var wire 1 # clk_in $end
+$var wire 1 $ valid_in $end
+$var wire 7 c vec_by [6:0] $end
+$var wire 7 d vec_bx [6:0] $end
+$var wire 7 e vec_ay [6:0] $end
+$var wire 7 f vec_ax [6:0] $end
+$var parameter 32 g SYS_BIT_WIDTH $end
+$var reg 1 h state $end
+$var reg 1 6 valid_out $end
+$var reg 13 i value_out [12:0] $end
+$upscope $end
+$scope module pa $end
+$var wire 6 j point_ax [5:0] $end
+$var wire 6 k point_ay [5:0] $end
+$var wire 6 l point_bx [5:0] $end
+$var wire 6 m point_by [5:0] $end
+$var parameter 32 n SYS_BIT_WIDTH $end
+$var reg 7 o vec_ab_out_x [6:0] $end
+$var reg 7 p vec_ab_out_y [6:0] $end
+$upscope $end
+$scope module pb $end
+$var wire 6 q point_ax [5:0] $end
+$var wire 6 r point_ay [5:0] $end
+$var wire 6 s point_bx [5:0] $end
+$var wire 6 t point_by [5:0] $end
+$var parameter 32 u SYS_BIT_WIDTH $end
+$var reg 7 v vec_ab_out_x [6:0] $end
+$var reg 7 w vec_ab_out_y [6:0] $end
+$upscope $end
+$scope module pc $end
+$var wire 6 x point_ax [5:0] $end
+$var wire 6 y point_ay [5:0] $end
+$var wire 6 z point_bx [5:0] $end
+$var wire 6 { point_by [5:0] $end
+$var parameter 32 | SYS_BIT_WIDTH $end
+$var reg 7 } vec_ab_out_x [6:0] $end
+$var reg 7 ~ vec_ab_out_y [6:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b110 |
+b110 u
+b110 n
+b110 g
+b110 `
+b110 Y
+b110 R
+b110 K
+b1100 =
+b110 <
+b110 5
+$end
+#0
+$dumpvars
+bx ~
+bx }
+bx {
+bx z
+bx y
+bx x
+bx w
+bx v
+bx t
+bx s
+bx r
+bx q
+bx p
+bx o
+bx m
+bx l
+bx k
+bx j
+bx i
+xh
+bx f
+bx e
+bx d
+bx c
+bx b
+xa
+bx _
+bx ^
+bx ]
+bx \
+bx [
+xZ
+bx X
+bx W
+bx V
+bx U
+bx T
+bx S
+bx Q
+bx P
+bx O
+bx N
+bx M
+bx L
+bx J
+bx I
+bx H
+bx G
+xF
+xE
+xD
+bx C
+bx B
+bx A
+x@
+x?
+bx >
+bx ;
+x:
+bx 9
+x8
+bx 7
+x6
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+bx ,
+bx +
+bx *
+bx )
+bx (
+bx '
+bx &
+bx %
+x$
+0#
+x"
+x!
+$end
+#5000
+1#
+#10000
+b1110001 \
+b1110001 e
+b1110001 ~
+b1010 ]
+b1010 f
+b1010 }
+b1111 ^
+b1111 w
+b0 _
+b0 v
+b11110 M
+b11110 V
+b1010 L
+b1010 U
+b0 T
+b0 X
+b10100 S
+b10100 W
+b1110001 c
+b1110001 p
+b1110110 d
+b1110110 o
+b1111 k
+b1111 r
+b1111 y
+b1010 j
+b1010 q
+b1010 x
+b0 Q
+b0 {
+b10100 P
+b10100 z
+b11110 J
+b11110 t
+b1010 I
+b1010 s
+b0 H
+b0 O
+b0 m
+b0 G
+b0 N
+b0 l
+0#
+1$
+b1111 &
+b1111 .
+b1010 %
+b1010 -
+b0 ,
+b0 4
+b10100 +
+b10100 3
+b11110 *
+b11110 2
+b1010 )
+b1010 1
+b0 (
+b0 0
+b0 '
+b0 /
+#15000
+0"
+0@
+1Z
+1h
+1a
+1#
+#20000
+0#
+0$
+#25000
+b1001011000 A
+1F
+1E
+0a
+b1111101101010 9
+b1111101101010 b
+18
+0h
+b1111011010100 7
+b1111011010100 i
+16
+0Z
+b1110110101000 ;
+b1110110101000 [
+1:
+1#
+#30000
+0#
+#35000
+b111000010 B
+1D
+b11111000111110 C
+0:
+06
+08
+1#
+#40000
+0#
+#45000
+0D
+1?
+b111111101101010 >
+1#
+#50000
+0#
+#55000
+1@
+1"
+1!
+0?
+1#
+#60000
+0#
+#65000
+0"
+1#
+#70000
+0#
+#75000
+1#
+#80000
+0#
+#85000
+1#
+#90000
+0#
+#95000
+1#
+#100000
+0#
+#105000
+1#
+#110000
+0#
+#115000
+1#
+#120000
+0#
+#125000
+1#
+#130000
+0#
+#135000
+1#
+#140000
+0#
+#145000
+1#
+#150000
+0#
+#155000
+1#
+#160000
+0#
+#165000
+1#
+#170000
+0#
+#175000
+1#
+#180000
+0#
+#185000
+1#
+#190000
+0#
+#195000
+1#
+#200000
+0#
+#205000
+1#
+#210000
+0#
+#215000
+1#
+#220000
+0#
+#225000
+1#
+#230000
+0#
+#235000
+1#
+#240000
+0#
+#245000
+1#
+#250000
+0#
+#255000
+1#
+#260000
+0#
+#265000
+1#
+#270000
+0#
+#275000
+1#
+#280000
+0#
+#285000
+1#
+#290000
+0#
+#295000
+1#
+#300000
+0#
+#305000
+1#
+#310000
+0#
+#315000
+1#
+#320000
+0#
+#325000
+1#
+#330000
+0#
+#335000
+1#
+#340000
+0#
+#345000
+1#
+#350000
+0#
+#355000
+1#
+#360000
+0#
+#365000
+1#
+#370000
+0#
+#375000
+1#
+#380000
+0#
+#385000
+1#
+#390000
+0#
+#395000
+1#
+#400000
+0#
+#405000
+1#
+#410000
+0#
+#415000
+1#
+#420000
+0#
+#425000
+1#
+#430000
+0#
+#435000
+1#
+#440000
+0#
+#445000
+1#
+#450000
+0#
+#455000
+1#
+#460000
+0#
+#465000
+1#
+#470000
+0#
+#475000
+1#
+#480000
+0#
+#485000
+1#
+#490000
+0#
+#495000
+1#
+#500000
+0#
+#505000
+1#
+#510000
+0#
+#515000
+1#
+#520000
+0#
+#525000
+1#
+#530000
+0#
+#535000
+1#
+#540000
+0#
+#545000
+1#
+#550000
+0#
+#555000
+1#
+#560000
+0#
+#565000
+1#
+#570000
+0#
+#575000
+1#
+#580000
+0#
+#585000
+1#
+#590000
+0#
+#595000
+1#
+#600000
+0#
+#605000
+1#
+#610000
+0#
+#615000
+1#
+#620000
+0#
+#625000
+1#
+#630000
+0#
+#635000
+1#
+#640000
+0#
+#645000
+1#
+#650000
+0#
+#655000
+1#
+#660000
+0#
+#665000
+1#
+#670000
+0#
+#675000
+1#
+#680000
+0#
+#685000
+1#
+#690000
+0#
+#695000
+1#
+#700000
+0#
+#705000
+1#
+#710000
+0#
+#715000
+1#
+#720000
+0#
+#725000
+1#
+#730000
+0#
+#735000
+1#
+#740000
+0#
+#745000
+1#
+#750000
+0#
+#755000
+1#
+#760000
+0#
+#765000
+1#
+#770000
+0#
+#775000
+1#
+#780000
+0#
+#785000
+1#
+#790000
+0#
+#795000
+1#
+#800000
+0#
+#805000
+1#
+#810000
+0#
+#815000
+1#
+#820000
+0#
+#825000
+1#
+#830000
+0#
+#835000
+1#
+#840000
+0#
+#845000
+1#
+#850000
+0#
+#855000
+1#
+#860000
+0#
+#865000
+1#
+#870000
+0#
+#875000
+1#
+#880000
+0#
+#885000
+1#
+#890000
+0#
+#895000
+1#
+#900000
+0#
+#905000
+1#
+#910000
+0#
+#915000
+1#
+#920000
+0#
+#925000
+1#
+#930000
+0#
+#935000
+1#
+#940000
+0#
+#945000
+1#
+#950000
+0#
+#955000
+1#
+#960000
+0#
+#965000
+1#
+#970000
+0#
+#975000
+1#
+#980000
+0#
+#985000
+1#
+#990000
+0#
+#995000
+1#
+#1000000
+0#
+#1005000
+1#
+#1010000
+0#
+#1015000
+1#
+#1020000
+0#

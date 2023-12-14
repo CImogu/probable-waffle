@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Dec 14 16:11:53 2023
+# Process ID: 2327825
+# Current directory: /home/ccimogu/Downloads/fp
+# Command line: vivado -mode batch -source build.tcl
+# Log file: /home/ccimogu/Downloads/fp/vivado.log
+# Journal file: /home/ccimogu/Downloads/fp/vivado.jou
+# Running On: eecs-digital-34, OS: Linux, CPU Frequency: 2205.013 MHz, CPU Physical cores: 16, Host memory: 33318 MB
+#-----------------------------------------------------------
+source build.tcl
