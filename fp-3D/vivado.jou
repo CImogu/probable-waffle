@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #-----------------------------------------------------------
 # Vivado v2023.1 (64-bit)
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
@@ -12,3 +13,21 @@
 # Running On: eecs-digital-34, OS: Linux, CPU Frequency: 800.171 MHz, CPU Physical cores: 16, Host memory: 33318 MB
 #-----------------------------------------------------------
 source build.tcl
+||||||| c064a01
+=======
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Dec 14 18:23:15 2023
+# Process ID: 2426897
+# Current directory: /home/ccimogu/Downloads/fp
+# Command line: vivado -mode batch -source sim.tcl
+# Log file: /home/ccimogu/Downloads/fp/vivado.log
+# Journal file: /home/ccimogu/Downloads/fp/vivado.jou
+# Running On: eecs-digital-34, OS: Linux, CPU Frequency: 2784.831 MHz, CPU Physical cores: 16, Host memory: 33318 MB
+#-----------------------------------------------------------
+source sim.tcl
+source threegen_tb.tcl
+>>>>>>> bf0e13e4a5cf0222b03a0b6f164116cfa02bc6c7

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Design Route Status
                                                :      # nets :
    ------------------------------------------- : ----------- :
@@ -9,3 +10,17 @@ Design Route Status
        # of nets with routing errors.......... :           0 :
    ------------------------------------------- : ----------- :
 
+||||||| c064a01
+=======
+Design Route Status
+                                               :      # nets :
+   ------------------------------------------- : ----------- :
+   # of logical nets.......................... :         836 :
+       # of nets not needing routing.......... :         135 :
+           # of internally routed nets........ :         135 :
+       # of routable nets..................... :         701 :
+           # of fully routed nets............. :         701 :
+       # of nets with routing errors.......... :           0 :
+   ------------------------------------------- : ----------- :
+
+>>>>>>> bf0e13e4a5cf0222b03a0b6f164116cfa02bc6c7
