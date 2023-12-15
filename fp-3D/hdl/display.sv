@@ -248,7 +248,13 @@ module displaying #(
     input wire rst_in,
     input wire valid_in,
     input wire [20:0] game_obj_loc [5:0],
-    output logic smth
+
+    input wire pixel_clk_in,
+    input wire [10:0] hcount_in,
+    input wire [9:0] vcount_in,
+    output logic [7:0] red_out,
+    output logic [7:0] green_out,
+    output logic [7:0] blue_out
 );
 
 logic [31:0] screen_distance = 'd1;
@@ -413,6 +419,29 @@ logic [23:0] previous;
 logic [$clog2(SOURCE_SIZE)-1:0] pixel_addr;
 assign pixel_addr = pixel_to_color[19:10] + (pixel_to_color[9:0] * WIDTH);
 
+
+assign sr_add = hcount_in + (vcount_in * WIDTH);
+logic [10:0] hcount_pipe [1:0];
+  always_ff @(posedge pixel_clk_in) begin
+    hcount_pipe[0] <= hcount_in;
+    for (int i=1; i < 2; i = i+1) begin
+        hcount_pipe[i] <= hcount_pipe[i-1];
+    end
+  end
+
+  logic [9:0] vcount_pipe [1:0];
+  always_ff @(posedge pixel_clk_in) begin
+    vcount_pipe[0] <= vcount_in;
+    for (int i=1; i < 2; i = i+1) begin
+        vcount_pipe[i] <= vcount_pipe[i-1];
+    end
+  end
+
+logic [23:0] pixel_color;
+assign red_out = pixel_color[23:16];
+assign green_out = pixel_color[15:8];
+assign blue_out = pixel_color[7:0];
+
 xilinx_true_dual_port_read_first_2_clock_ram #(
     .RAM_WIDTH(24), // A{x, y}, B{x y}, C{x, y}
     .RAM_DEPTH(SOURCE_SIZE))
@@ -429,11 +458,11 @@ xilinx_true_dual_port_read_first_2_clock_ram #(
     // reading pixels
     .addrb(sr_add),
     .dinb(1'b0),
-    .clkb(clk_in),
+    .clkb(pixel_clk_in),
     .web(1'b0),
     .enb(1'b1),
     .rstb(rst_in),
     .regceb(1'b1),
-    .doutb(color)
+    .doutb(pixel_color)
   );
 endmodule
