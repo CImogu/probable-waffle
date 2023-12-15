@@ -5,16 +5,18 @@ read_verilog  [ glob ./hdl/*.v ]
 read_mem [ glob ./data/*.mem ]
 read_verilog -sv [ glob ./sim/*.sv ]
 
-read_ip ./ip/adder/adder.xci
-read_ip ./ip/adder_many/adder_many.xci
 read_ip ./ip/multiplier/multiplier.xci
+read_ip ./ip/adder/adder.xci
 read_ip ./ip/sqrt/sqrt.xci
 read_ip ./ip/difference/difference.xci
+read_ip ./ip/divider/divider.xci
 read_ip ./ip/fixed2float/fixed2float.xci
 
-# read_ip ./ip/divide_many/divide_many.xci
-# read_ip ./ip/multiply_many/multiply_many.xci
-# read_ip ./ip/float2fixed_many/float2fixed_many.xci
+read_ip ./ip/adder_many/adder_many.xci
+read_ip ./ip/divide_many/divide_many.xci
+read_ip ./ip/multiply_many/multiply_many.xci
+read_ip ./ip/difference_many/difference_many.xci
+read_ip ./ip/float2fixed_many/float2fixed_many.xci
 generate_target all [get_ips]
 synth_ip [get_ips]
 

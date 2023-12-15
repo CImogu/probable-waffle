@@ -12,8 +12,8 @@ module scale_vec (
     input wire [31:0] vec_y,
     input wire [31:0] vec_z,
     input wire valid_in,
-    output logic [31:0] screen_x,
-    output logic [31:0] screen_y,
+    output logic [9:0] screen_x,
+    output logic [9:0] screen_y,
     output logic valid_out
 );
 
