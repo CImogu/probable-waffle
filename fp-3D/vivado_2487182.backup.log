@@ -3,13 +3,13 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Dec 14 16:16:26 2023
-# Process ID: 2330651
+# Start of session at: Thu Dec 14 20:18:02 2023
+# Process ID: 2487182
 # Current directory: /home/ccimogu/Downloads/fp
 # Command line: vivado -mode batch -source build.tcl
 # Log file: /home/ccimogu/Downloads/fp/vivado.log
 # Journal file: /home/ccimogu/Downloads/fp/vivado.jou
-# Running On: eecs-digital-34, OS: Linux, CPU Frequency: 968.059 MHz, CPU Physical cores: 16, Host memory: 33318 MB
+# Running On: eecs-digital-34, OS: Linux, CPU Frequency: 5069.091 MHz, CPU Physical cores: 16, Host memory: 33318 MB
 #-----------------------------------------------------------
 source build.tcl
 # set partNum xc7s50csga324-1
@@ -53,6 +53,8 @@ WARNING: [Vivado 12-13650] The IP file '/home/ccimogu/Downloads/fp/ip/divide_man
 WARNING: [Vivado 12-13650] The IP file '/home/ccimogu/Downloads/fp/ip/multiply_many/multiply_many.xci' has been moved from its original location, as a result the outputs for this IP will now be generated in '/home/ccimogu/Downloads/fp/ip/multiply_many/ip/multiply_many'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands.
 # read_ip ./ip/difference_many/difference_many.xci
 WARNING: [Vivado 12-13650] The IP file '/home/ccimogu/Downloads/fp/ip/difference_many/difference_many.xci' has been moved from its original location, as a result the outputs for this IP will now be generated in '/home/ccimogu/Downloads/fp/ip/difference_many/ip/difference_many'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands.
+# read_ip ./ip/float2fixed_many/float2fixed_many.xci
+WARNING: [Vivado 12-13650] The IP file '/home/ccimogu/Downloads/fp/ip/float2fixed_many/float2fixed_many.xci' has been moved from its original location, as a result the outputs for this IP will now be generated in '/home/ccimogu/Downloads/fp/ip/float2fixed_many/ip/float2fixed_many'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands.
 # generate_target all [get_ips]
 # synth_ip [get_ips]
 INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: /home/ccimogu/Downloads/fp/ip/adder/adder.xci
@@ -62,6 +64,7 @@ INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken. 
 INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: /home/ccimogu/Downloads/fp/ip/divide_many/divide_many.xci
 INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: /home/ccimogu/Downloads/fp/ip/divider/divider.xci
 INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: /home/ccimogu/Downloads/fp/ip/fixed2float/fixed2float.xci
+INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: /home/ccimogu/Downloads/fp/ip/float2fixed_many/float2fixed_many.xci
 INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: /home/ccimogu/Downloads/fp/ip/multiplier/multiplier.xci
 INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: /home/ccimogu/Downloads/fp/ip/multiply_many/multiply_many.xci
 INFO: [Vivado 12-3435] The given sub-design is up-to-date, no action was taken.  If a regeneration is desired, use the '-force' option: /home/ccimogu/Downloads/fp/ip/sqrt/sqrt.xci
@@ -74,9 +77,19 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Device 21-403] Loading part xc7s50csga324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2330735
+INFO: [Synth 8-7075] Helper process launched with PID 2487261
+WARNING: [Synth 8-6901] identifier 'screen_px' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:325]
+WARNING: [Synth 8-6901] identifier 'screen_px' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:325]
+WARNING: [Synth 8-6901] identifier 'screen_px' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:325]
+WARNING: [Synth 8-6901] identifier 'stage_check' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:326]
+WARNING: [Synth 8-6901] identifier 'cvalid_in' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:369]
+WARNING: [Synth 8-6901] identifier 'cvalid_in' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:373]
+WARNING: [Synth 8-6901] identifier 'cvertex_a' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:374]
+WARNING: [Synth 8-6901] identifier 'cvertex_b' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:375]
+WARNING: [Synth 8-6901] identifier 'cvertex_c' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:376]
+WARNING: [Synth 8-6901] identifier 'clast' is used before its declaration [/home/ccimogu/Downloads/fp/hdl/display.sv:377]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2027.539 ; gain = 372.734 ; free physical = 2704 ; free virtual = 23226
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2024.289 ; gain = 368.766 ; free physical = 4263 ; free virtual = 24584
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_level' [/home/ccimogu/Downloads/fp/hdl/top_level.sv:4]
 INFO: [Synth 8-6157] synthesizing module 'displaying' [/home/ccimogu/Downloads/fp/hdl/display.sv:243]
@@ -98,30 +111,37 @@ INFO: [Synth 8-3876] $readmem data file 'bul_model.mem' is read successfully [/h
 INFO: [Synth 8-6155] done synthesizing module 'xilinx_single_port_ram_read_first__parameterized0' (0#1) [/home/ccimogu/Downloads/fp/hdl/xilinx_single_port_ram_read_first.v:10]
 INFO: [Synth 8-6157] synthesizing module 'convert_player' [/home/ccimogu/Downloads/fp/hdl/threegen.sv:10]
 	Parameter PLAYERS bound to: 6 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'fixed2float' [/home/ccimogu/Downloads/fp/.Xil/Vivado-2330651-eecs-digital-34/realtime/fixed2float_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fixed2float' (0#1) [/home/ccimogu/Downloads/fp/.Xil/Vivado-2330651-eecs-digital-34/realtime/fixed2float_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fixed2float' [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/fixed2float_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fixed2float' (0#1) [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/fixed2float_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'convert_player' (0#1) [/home/ccimogu/Downloads/fp/hdl/threegen.sv:10]
 INFO: [Synth 8-226] default block is never used [/home/ccimogu/Downloads/fp/hdl/threegen.sv:152]
-INFO: [Synth 8-6157] synthesizing module 'adder_many' [/home/ccimogu/Downloads/fp/.Xil/Vivado-2330651-eecs-digital-34/realtime/adder_many_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'adder_many' (0#1) [/home/ccimogu/Downloads/fp/.Xil/Vivado-2330651-eecs-digital-34/realtime/adder_many_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'adder_many' [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/adder_many_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'adder_many' (0#1) [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/adder_many_stub.v:6]
 WARNING: [Synth 8-689] width (24) of port connection 'm_axis_result_tuser' does not match port width (32) of module 'adder_many' [/home/ccimogu/Downloads/fp/hdl/threegen.sv:182]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/ccimogu/Downloads/fp/hdl/threegen.sv:219]
 INFO: [Synth 8-6155] done synthesizing module 'threegen' (0#1) [/home/ccimogu/Downloads/fp/hdl/threegen.sv:82]
 INFO: [Synth 8-6157] synthesizing module 'scale_vec' [/home/ccimogu/Downloads/fp/hdl/make_triangle.sv:7]
-INFO: [Synth 8-6157] synthesizing module 'divide_many' [/home/ccimogu/Downloads/fp/.Xil/Vivado-2330651-eecs-digital-34/realtime/divide_many_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'divide_many' (0#1) [/home/ccimogu/Downloads/fp/.Xil/Vivado-2330651-eecs-digital-34/realtime/divide_many_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'multiply_many' [/home/ccimogu/Downloads/fp/.Xil/Vivado-2330651-eecs-digital-34/realtime/multiply_many_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'multiply_many' (0#1) [/home/ccimogu/Downloads/fp/.Xil/Vivado-2330651-eecs-digital-34/realtime/multiply_many_stub.v:6]
-ERROR: [Synth 8-439] module 'float2fixed_many' not found [/home/ccimogu/Downloads/fp/hdl/make_triangle.sv:49]
-ERROR: [Synth 8-6156] failed synthesizing module 'scale_vec' [/home/ccimogu/Downloads/fp/hdl/make_triangle.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'divide_many' [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/divide_many_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'divide_many' (0#1) [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/divide_many_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'multiply_many' [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/multiply_many_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'multiply_many' (0#1) [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/multiply_many_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'float2fixed_many' [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/float2fixed_many_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'float2fixed_many' (0#1) [/home/ccimogu/Downloads/fp/.Xil/Vivado-2487182-eecs-digital-34/realtime/float2fixed_many_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'scale_vec' (0#1) [/home/ccimogu/Downloads/fp/hdl/make_triangle.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'xilinx_true_dual_port_read_first_2_clock_ram' [/home/ccimogu/Downloads/fp/hdl/xilinx_true_dual_port_read_first_2_clock_ram.v:10]
+	Parameter RAM_WIDTH bound to: 60 - type: integer 
+	Parameter RAM_DEPTH bound to: 72 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xilinx_true_dual_port_read_first_2_clock_ram' (0#1) [/home/ccimogu/Downloads/fp/hdl/xilinx_true_dual_port_read_first_2_clock_ram.v:10]
+WARNING: [Synth 8-689] width (60) of port connection 'wea' does not match port width (1) of module 'xilinx_true_dual_port_read_first_2_clock_ram' [/home/ccimogu/Downloads/fp/hdl/display.sv:306]
+ERROR: [Synth 8-6038] cannot resolve hierarchical name for the item 'pixel_y' [/home/ccimogu/Downloads/fp/hdl/display.sv:358]
 ERROR: [Synth 8-6156] failed synthesizing module 'displaying' [/home/ccimogu/Downloads/fp/hdl/display.sv:243]
 ERROR: [Synth 8-6156] failed synthesizing module 'top_level' [/home/ccimogu/Downloads/fp/hdl/top_level.sv:4]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2091.508 ; gain = 436.703 ; free physical = 2622 ; free virtual = 23145
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2092.227 ; gain = 436.703 ; free physical = 4178 ; free virtual = 24498
 ---------------------------------------------------------------------------------
 RTL Elaboration failed
 INFO: [Common 17-83] Releasing license: Synthesis
-29 Infos, 1 Warnings, 0 Critical Warnings and 5 Errors encountered.
+34 Infos, 12 Warnings, 0 Critical Warnings and 4 Errors encountered.
 synth_design failed
 ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 14 16:16:34 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 14 20:18:11 2023...

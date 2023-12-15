@@ -303,8 +303,8 @@ xilinx_true_dual_port_read_first_2_clock_ram #(
     // writing output from scale_vec
     .addra(wt_addr),
     .clka(clk_in),
-    .wea(tv_in),
-    .dina(t_write),
+    .wea(twrite),
+    .dina(tv_in),
     .ena(1'b1),
     .regcea(1'b1),
     .rsta(rst_in),
@@ -322,15 +322,15 @@ xilinx_true_dual_port_read_first_2_clock_ram #(
 
 
 always_comb begin
-    t_write = {screen_px[0], screen_px[1], screen_px[2]};
-    tv_in = stage_check == 1;
+    tv_in = {screen_px[0], screen_px[1], screen_px[2]};
+    twrite = stage_check == 1;
 end
 
 logic [19:0] screen_px [2:0];
 logic [3:0] stage_check;
 logic write_done;
 
-typedef enum {A=0; B=1; C=2; D=3 } read_fsm;
+typedef enum {A=0, B=1, C=2, D=3 } read_fsm;
 read_fsm read_state;
 logic [$clog2(TRIANGLES)-1:0] rt_addr;
 logic [59:0] tv_out;
@@ -354,8 +354,8 @@ always_ff @( posedge clk_in ) begin
             end
 
         end else if (pixel_valid) begin
-            done <= 0;
-            screen_px[0] <= {pixel_x. pixel_y};
+            write_done <= 0;
+            screen_px[0] <= {pixel_x, pixel_y};
             for (integer i = 0; i < 2; i = i+1) begin
                 screen_px[i+1] <= screen_px[i];
             end
@@ -364,16 +364,21 @@ always_ff @( posedge clk_in ) begin
         
         // Reading FSM
         case (read_state)
-            A: fsm_state <= B;
-            B: fsm_state <= C;
+            A: begin
+                read_state <= B;
+                cvalid_in <= 0;
+            end
+            B: read_state <= C;
             C: begin
-                cpixel_valuealid_in <= 0;
+                cvalid_in <= 1;
+                cvertex_a <= tv_out[59:40];
+                cvertex_b <= tv_out[39:20];
+                cvertex_c <= tv_out[19:0];
                 if (clast) begin
-                    fsm_state <= A;
+                    read_state <= A;
                     rt_addr <= rt_addr + 1;
                 end
             end
-            default: 
         endcase
     end
 end 
@@ -383,10 +388,11 @@ logic [19:0] cvertex_b;
 logic [19:0] cvertex_c;
 logic cvalid_in;
 logic clast;
-logic to_color;
 
 logic [19:0] pixel_to_color;
+logic to_color;
 
+localparam SOURCE_SIZE = WIDTH * HEIGHT;
 triangle_color #(.WIDTH(WIDTH), .HEIGHT(HEIGHT)
   ) color_screen(
     .clk_in(clk_in),
@@ -400,10 +406,7 @@ triangle_color #(.WIDTH(WIDTH), .HEIGHT(HEIGHT)
     .last_out(clast)
 );
 logic [$clog2(SOURCE_SIZE)-1:0] sr_add;     
-logic [23:0] color_out = 23'h0000FF;
-logic to_color;
 
-localparam SOURCE_SIZE = WIDTH * HEIGHT;
 logic pixel_value;
 logic [23:0] previous;
 
@@ -431,25 +434,6 @@ xilinx_true_dual_port_read_first_2_clock_ram #(
     .enb(1'b1),
     .rstb(rst_in),
     .regceb(1'b1),
-    .doutb(color_out)
+    .doutb(color)
   );
-endmodule
-
-module displaying_test #(
-    parameter WIDTH = 1024,
-    parameter HEIGHT = 720
-)(
-    input wire clk_in,
-    input wire rst_in,
-    input wire valid_in,
-    input wire [20:0] player1,
-    input wire [20:0] player2,
-    input wire [20:0] player3,
-    input wire [20:0] bullet1,
-    input wire [20:0] bullet2
-    input wire [20:0] bullet3,
-    output logic smth
-);
-
-
 endmodule

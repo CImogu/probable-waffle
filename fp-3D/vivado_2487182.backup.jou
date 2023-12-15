@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Dec 14 16:20:53 2023
-# Process ID: 2333933
+# Start of session at: Thu Dec 14 20:18:02 2023
+# Process ID: 2487182
 # Current directory: /home/ccimogu/Downloads/fp
 # Command line: vivado -mode batch -source build.tcl
 # Log file: /home/ccimogu/Downloads/fp/vivado.log
 # Journal file: /home/ccimogu/Downloads/fp/vivado.jou
-# Running On: eecs-digital-34, OS: Linux, CPU Frequency: 3136.376 MHz, CPU Physical cores: 16, Host memory: 33318 MB
+# Running On: eecs-digital-34, OS: Linux, CPU Frequency: 5069.091 MHz, CPU Physical cores: 16, Host memory: 33318 MB
 #-----------------------------------------------------------
 source build.tcl

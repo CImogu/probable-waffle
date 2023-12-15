@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-| Date         : Thu Dec 14 17:12:52 2023
+| Date         : Thu Dec 14 20:20:36 2023
 | Host         : eecs-digital-34 running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_timing_summary -file obj/post_place_timing_summary.rpt
 | Design       : top_level
@@ -137,7 +137,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      5.028        0.000                      0                  880        0.123        0.000                      0                  880        3.500        0.000                       0                   451  
+      5.050        0.000                      0                  880        0.178        0.000                      0                  880        3.500        0.000                       0                   451  
 
 
 All user specified timing constraints are met.
@@ -160,7 +160,7 @@ gclk   {0.000 4.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-gclk                5.028        0.000                      0                  880        0.123        0.000                      0                  880        3.500        0.000                       0                   451  
+gclk                5.050        0.000                      0                  880        0.178        0.000                      0                  880        3.500        0.000                       0                   451  
 
 
 ------------------------------------------------------------------------------------------------
@@ -191,27 +191,27 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  gclk
   To Clock:  gclk
 
-Setup :            0  Failing Endpoints,  Worst Slack        5.028ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.123ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        5.050ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.178ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             5.028ns  (required time - arrival time)
+Slack (MET) :             5.050ns  (required time - arrival time)
   Source:                 my_manta/urx/baud_counter_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by gclk  {rise@0.000ns fall@4.000ns period=10.000ns})
-  Destination:            my_manta/urx/baud_counter_reg[0]/R
+  Destination:            my_manta/urx/baud_counter_reg[13]/R
                             (rising edge-triggered cell FDRE clocked by gclk  {rise@0.000ns fall@4.000ns period=10.000ns})
   Path Group:             gclk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (gclk rise@10.000ns - gclk rise@0.000ns)
-  Data Path Delay:        4.280ns  (logic 0.992ns (23.178%)  route 3.288ns (76.822%))
+  Data Path Delay:        4.156ns  (logic 1.056ns (25.409%)  route 3.100ns (74.591%))
   Logic Levels:           3  (LUT4=2 LUT5=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.014ns = ( 15.014 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.314ns
+  Clock Path Skew:        -0.028ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.942ns = ( 14.942 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.245ns
     Clock Pessimism Removal (CPR):    0.276ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -227,18 +227,18 @@ Slack (MET) :             5.028ns  (required time - arrival time)
     N15                  IBUF (Prop_ibuf_I_O)         1.440     1.440 r  clk_100mhz_IBUF_inst/O
                          net (fo=1, estimated)        1.972     3.412    clk_100mhz_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.508 r  clk_100mhz_IBUF_BUFG_inst/O
-                         net (fo=450, estimated)      1.806     5.314    my_manta/urx/clk_100mhz_IBUF_BUFG
-    SLICE_X7Y104         FDRE                                         r  my_manta/urx/baud_counter_reg[0]/C
+                         net (fo=450, estimated)      1.737     5.245    my_manta/urx/clk_100mhz_IBUF_BUFG
+    SLICE_X10Y110        FDRE                                         r  my_manta/urx/baud_counter_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X7Y104         FDRE (Prop_fdre_C_Q)         0.419     5.733 f  my_manta/urx/baud_counter_reg[0]/Q
-                         net (fo=3, estimated)        0.827     6.560    my_manta/urx/baud_counter[0]
-    SLICE_X6Y104         LUT4 (Prop_lut4_I0_O)        0.296     6.856 r  my_manta/urx/state[3]_i_5/O
-                         net (fo=1, estimated)        0.782     7.638    my_manta/urx/state[3]_i_5_n_0
-    SLICE_X6Y106         LUT4 (Prop_lut4_I1_O)        0.124     7.762 r  my_manta/urx/state[3]_i_3/O
-                         net (fo=5, estimated)        0.890     8.652    my_manta/urx/state[3]_i_3_n_0
-    SLICE_X9Y106         LUT5 (Prop_lut5_I4_O)        0.153     8.805 r  my_manta/urx/state[3]_i_1/O
-                         net (fo=18, estimated)       0.789     9.594    my_manta/urx/state[3]_i_1_n_0
-    SLICE_X7Y104         FDRE                                         r  my_manta/urx/baud_counter_reg[0]/R
+    SLICE_X10Y110        FDRE (Prop_fdre_C_Q)         0.478     5.723 f  my_manta/urx/baud_counter_reg[0]/Q
+                         net (fo=3, estimated)        0.869     6.592    my_manta/urx/baud_counter[0]
+    SLICE_X11Y110        LUT4 (Prop_lut4_I0_O)        0.301     6.893 r  my_manta/urx/state[3]_i_5/O
+                         net (fo=1, estimated)        0.576     7.469    my_manta/urx/state[3]_i_5_n_0
+    SLICE_X11Y111        LUT4 (Prop_lut4_I1_O)        0.124     7.593 r  my_manta/urx/state[3]_i_3/O
+                         net (fo=5, estimated)        0.832     8.425    my_manta/urx/state[3]_i_3_n_0
+    SLICE_X8Y111         LUT5 (Prop_lut5_I4_O)        0.153     8.578 r  my_manta/urx/state[3]_i_1/O
+                         net (fo=18, estimated)       0.823     9.401    my_manta/urx/state[3]_i_1_n_0
+    SLICE_X10Y113        FDRE                                         r  my_manta/urx/baud_counter_reg[13]/R
   -------------------------------------------------------------------    -------------------
 
                          (clock gclk rise edge)      10.000    10.000 r  
@@ -247,16 +247,16 @@ Slack (MET) :             5.028ns  (required time - arrival time)
     N15                  IBUF (Prop_ibuf_I_O)         1.370    11.370 r  clk_100mhz_IBUF_inst/O
                          net (fo=1, estimated)        1.873    13.244    clk_100mhz_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    13.335 r  clk_100mhz_IBUF_BUFG_inst/O
-                         net (fo=450, estimated)      1.679    15.014    my_manta/urx/clk_100mhz_IBUF_BUFG
-    SLICE_X7Y104         FDRE                                         r  my_manta/urx/baud_counter_reg[0]/C
-                         clock pessimism              0.276    15.289    
-                         clock uncertainty           -0.035    15.254    
-    SLICE_X7Y104         FDRE (Setup_fdre_C_R)       -0.632    14.622    my_manta/urx/baud_counter_reg[0]
+                         net (fo=450, estimated)      1.607    14.942    my_manta/urx/clk_100mhz_IBUF_BUFG
+    SLICE_X10Y113        FDRE                                         r  my_manta/urx/baud_counter_reg[13]/C
+                         clock pessimism              0.276    15.217    
+                         clock uncertainty           -0.035    15.182    
+    SLICE_X10Y113        FDRE (Setup_fdre_C_R)       -0.731    14.451    my_manta/urx/baud_counter_reg[13]
   -------------------------------------------------------------------
-                         required time                         14.622    
-                         arrival time                          -9.594    
+                         required time                         14.451    
+                         arrival time                          -9.401    
   -------------------------------------------------------------------
-                         slack                                  5.028    
+                         slack                                  5.050    
 
 
 
@@ -264,20 +264,20 @@ Slack (MET) :             5.028ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.123ns  (arrival time - required time)
-  Source:                 my_manta/fproj_io_core_inst/data_o_reg[0]/C
+Slack (MET) :             0.178ns  (arrival time - required time)
+  Source:                 my_manta/fproj_io_core_inst/data_o_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by gclk  {rise@0.000ns fall@4.000ns period=10.000ns})
-  Destination:            my_manta/btx/buffer_reg[0]/D
+  Destination:            my_manta/btx/buffer_reg[1]/D
                             (rising edge-triggered cell FDRE clocked by gclk  {rise@0.000ns fall@4.000ns period=10.000ns})
   Path Group:             gclk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (gclk rise@0.000ns - gclk rise@0.000ns)
-  Data Path Delay:        0.366ns  (logic 0.164ns (44.820%)  route 0.202ns (55.180%))
+  Data Path Delay:        0.270ns  (logic 0.141ns (52.225%)  route 0.129ns (47.775%))
   Logic Levels:           0  
-  Clock Path Skew:        0.184ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.162ns
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.248ns
     Source Clock Delay      (SCD):    1.739ns
-    Clock Pessimism Removal (CPR):    0.239ns
+    Clock Pessimism Removal (CPR):    0.493ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -288,11 +288,11 @@ Slack (MET) :             0.123ns  (arrival time - required time)
                          net (fo=1, estimated)        0.831     1.040    clk_100mhz_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     1.066 r  clk_100mhz_IBUF_BUFG_inst/O
                          net (fo=450, estimated)      0.673     1.739    my_manta/fproj_io_core_inst/clk_100mhz_IBUF_BUFG
-    SLICE_X2Y103         FDRE                                         r  my_manta/fproj_io_core_inst/data_o_reg[0]/C
+    SLICE_X3Y105         FDRE                                         r  my_manta/fproj_io_core_inst/data_o_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X2Y103         FDRE (Prop_fdre_C_Q)         0.164     1.903 r  my_manta/fproj_io_core_inst/data_o_reg[0]/Q
-                         net (fo=1, estimated)        0.202     2.105    my_manta/btx/Q[0]
-    SLICE_X2Y99          FDRE                                         r  my_manta/btx/buffer_reg[0]/D
+    SLICE_X3Y105         FDRE (Prop_fdre_C_Q)         0.141     1.880 r  my_manta/fproj_io_core_inst/data_o_reg[1]/Q
+                         net (fo=1, estimated)        0.129     2.009    my_manta/btx/Q[1]
+    SLICE_X2Y104         FDRE                                         r  my_manta/btx/buffer_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock gclk rise edge)       0.000     0.000 r  
@@ -301,15 +301,15 @@ Slack (MET) :             0.123ns  (arrival time - required time)
     N15                  IBUF (Prop_ibuf_I_O)         0.396     0.396 r  clk_100mhz_IBUF_inst/O
                          net (fo=1, estimated)        0.875     1.271    clk_100mhz_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.300 r  clk_100mhz_IBUF_BUFG_inst/O
-                         net (fo=450, estimated)      0.862     2.162    my_manta/btx/clk_100mhz_IBUF_BUFG
-    SLICE_X2Y99          FDRE                                         r  my_manta/btx/buffer_reg[0]/C
-                         clock pessimism             -0.239     1.923    
-    SLICE_X2Y99          FDRE (Hold_fdre_C_D)         0.059     1.982    my_manta/btx/buffer_reg[0]
+                         net (fo=450, estimated)      0.948     2.248    my_manta/btx/clk_100mhz_IBUF_BUFG
+    SLICE_X2Y104         FDRE                                         r  my_manta/btx/buffer_reg[1]/C
+                         clock pessimism             -0.493     1.755    
+    SLICE_X2Y104         FDRE (Hold_fdre_C_D)         0.076     1.831    my_manta/btx/buffer_reg[1]
   -------------------------------------------------------------------
-                         required time                         -1.982    
-                         arrival time                           2.105    
+                         required time                         -1.831    
+                         arrival time                           2.009    
   -------------------------------------------------------------------
-                         slack                                  0.123    
+                         slack                                  0.178    
 
 
 
@@ -324,8 +324,8 @@ Sources:            { clk_100mhz }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
 Min Period        n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y0  clk_100mhz_IBUF_BUFG_inst/I
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         6.000       5.500      SLICE_X11Y103  my_manta/brx/FSM_onehot_state_reg[0]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X11Y103  my_manta/brx/FSM_onehot_state_reg[0]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         6.000       5.500      SLICE_X11Y107  my_manta/brx/FSM_onehot_state_reg[0]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X11Y107  my_manta/brx/FSM_onehot_state_reg[0]/C
 
 
 
