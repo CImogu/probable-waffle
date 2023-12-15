@@ -1,0 +1,13 @@
+---
+cores:
+
+  core:
+    type: io
+
+    inputs:
+      val1_in: 64
+      val2_in: 64
+uart:
+  port: "/dev/ttyUSB1"
+  baudrate: 3000000
+  clock_freq: 100000000
