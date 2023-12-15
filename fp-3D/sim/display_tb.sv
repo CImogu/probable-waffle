@@ -17,13 +17,6 @@ module display_tb();
     logic clk_in;
     logic sys_rst;
 
-/*     logic [9:0] max_vertex_x;
-    max my_max (.v1(vertex_ax), .v2(vertex_bx), 
-                .v3(vertex_cx), .max(max_vertex_x));
-    
-    logic [9:0] min_vertex_y;
-    min my_min (.v1(vertex_ay), .v2(vertex_by), 
-                .v3(vertex_cy), .min(min_vertex_y)); */
 
     triangle_color #(.WIDTH(40), .HEIGHT(10)) uut (
     .clk_in(clk_in),
