@@ -1,3 +1,0 @@
-# Nintendo EtherStream
-
-## Folder breakdown:
