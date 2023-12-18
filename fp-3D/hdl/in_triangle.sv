@@ -222,7 +222,7 @@ module in_triangle #(
                 valid_out <= 1;
                 is_inside <= 1;
                 complete <= 1;
-            end else begin // d - f (subtraction not being done correctly)
+            end else begin // d - f (subtraction not being done correctly) - fixed
                 if (!f_constant[sign_idx+1] && d_constant[sign_idx]) begin
                     c_check <= 0 - (d_abs + f_abs);
                 end else if (!f_constant[sign_idx+1] && d_constant[sign_idx]) begin
@@ -231,7 +231,9 @@ module in_triangle #(
                     c_check <= d_constant - f_constant;
                 end
                 c_check_valid <= 1;
+                f_valid <= 0;
             end
+        end else if (c_check_valid) begin
             is_inside <= c_check[sign_idx+2] == d_constant[sign_idx];
             valid_out <= 1;
             complete <= 1;

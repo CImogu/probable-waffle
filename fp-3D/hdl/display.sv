@@ -257,7 +257,7 @@ module displaying #(
     output logic [7:0] blue_out
 );
 
-logic [31:0] screen_distance = 'd1;
+logic [31:0] screen_distance = 32'h3f800000; // 1 in IEEE hex coordinates
 
 logic ftvalid;
 logic [31:0] fvec_x;
