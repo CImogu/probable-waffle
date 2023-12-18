@@ -60,34 +60,7 @@ module top_level(
       .nf_out(new_frame),
       .fc_out(frame_count));
 
-  //random number generator using lsfr_16 module
-  logic [15:0] q;
-  lfsr_16 random_num (
-    .clk_in(clk_pixel),
-    .rst_in(sys_rst),
-    .seed_in(16'b1),
-    .q_out(q)
-  );
-
-  logic [7:0] img_red, img_green, img_blue;
-
-  //x_com and y_com are the image sprite locations
-  logic [10:0] x_com;
-  logic [9:0] y_com;
-  logic pop;
-  //update center of mass x_com, y_com based on new_com signal
-  always_ff @(posedge clk_pixel)begin
-    if (sys_rst)begin
-      x_com <= 0;
-      y_com <= 0;
-    end else if(btn[1])begin
-      //do some random stuff here to popocat
-      x_com <= (q[15:9] << 3);
-      y_com <= (q[8:3] << 3);
-      pop <= q[2];
-    end
-  end
-
+logic data_valid_in;
 localparam max_count = 50000;
 logic [13:0] clk_count;
 
